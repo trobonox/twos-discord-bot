@@ -45,7 +45,7 @@ async def on_member_join(member):
         return
 
     if guild.system_channel is not None:
-        welcome_message = f"Hi {member.mention}, welcome to the Twosday Community! How do you feel about pineapple on pizza?"
+        welcome_message = f"Hi {member.mention}, welcome to the Happy Twosday Community! How do you feel about pineapple on pizza?"
         await guild.system_channel.send(welcome_message)
 
 
