@@ -1,4 +1,5 @@
 import sys
+import random
 import discord
 import logging
 import traceback
@@ -11,6 +12,11 @@ __version__ = "1.1.0"
 
 # Load external JSON config
 config = config.config()
+
+# Load welcome prompts text file
+welcome_prompts = []
+with open('prompts.txt') as file:
+    welcome_prompts = file.readlines()
 
 # Extend default logging configuration
 logging.basicConfig(
@@ -78,7 +84,7 @@ async def on_member_join(member):
         return
 
     if guild.system_channel is not None:
-        welcome_message = f"Hi {member.mention}, welcome to the Happy Twosday Community! How do you feel about pineapple on pizza?"
+        welcome_message = f"Hi {member.mention}, welcome to the Happy Twosday Community! {random.choice(welcome_prompts)}"
         await guild.system_channel.send(welcome_message)
 
 
