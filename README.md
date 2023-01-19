@@ -23,4 +23,4 @@ python -OOO bot.py
 (Just like with `pip`, this command can slightly vary so you need to use `python3` on Linux and MacOS)
 
 ---
-© 2022 Trobonox. Licensed under the MIT License.
+© 2022-2023 Trobonox. Licensed under the MIT License.
