@@ -3,7 +3,7 @@
 Custom Discord bot made to welcome members in the Twosday Community for the app Twos.
 
 Check out Twos here and simply remember *things*: https://TwosApp.com.
-Use my referral code code and we both get a free upgrade: **420156**
+Use my referral code code and we both get a free upgrade: Referral code **trobo**
 
 ## 🚀 Deployment
 The only prerequisite is any installation of Python >=3.8.0
