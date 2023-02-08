@@ -30,7 +30,7 @@ class welcome(commands.Cog):
     @commands.command(
         command="showprompts", brief="Shows the currently loaded welcome prompts."
     )
-    @commands.has_permissions(manage_server=True)
+    @commands.has_permissions(manage_guild=True)
     async def showprompts(self, ctx):
         prompts = "**Prompts**\n"
         counter = 1
@@ -44,7 +44,7 @@ class welcome(commands.Cog):
     @commands.command(
         command="addprompt", brief="Adds a prompt."
     )
-    @commands.has_permissions(manage_server=True)
+    @commands.has_permissions(manage_guild=True)
     async def addprompt(self, ctx, prompt):
         with open('prompts.txt', 'a') as file:
             file.write(f"{prompt}\n")
