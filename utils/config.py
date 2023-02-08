@@ -3,7 +3,7 @@ import json
 from types import SimpleNamespace
 
 
-def load(filename=None, dev=True):
+def load(filename=None, dev=False):
     if filename is None:
         filename = "config.dev" if dev else "config"
 
