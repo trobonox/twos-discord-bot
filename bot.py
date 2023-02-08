@@ -1,3 +1,4 @@
+import os
 import sys
 import random
 import discord
@@ -6,17 +7,13 @@ import traceback
 
 from utils import config
 from discord.ext import commands
+from help import CustomHelp
 
 # Bot version
 __version__ = "1.1.0"
 
 # Load external JSON config
 config = config.config()
-
-# Load welcome prompts text file
-welcome_prompts = []
-with open('prompts.txt') as file:
-    welcome_prompts = file.readlines()
 
 # Extend default logging configuration
 logging.basicConfig(
@@ -43,6 +40,14 @@ async def on_ready():
     logging.info(
         f"Bot v{__version__} started and logged in as {bot.user}. Running discord.py version {discord.__version__}."
     )
+
+    await bot.load_extension("help")
+    await loadModules()
+
+async def loadModules():
+    for filename in os.listdir("./modules"):
+        if filename.endswith(".py"):
+            await bot.load_extension(f"modules.{filename[:-3]}")
 
 
 @bot.event
@@ -74,18 +79,12 @@ async def on_command_error(ctx, error):
             type(error), error, error.__traceback__, file=sys.stderr
         )
 
-
 @bot.event
-async def on_member_join(member):
-    guild = member.guild
-
-    # If we are not in the configured server, ignore any joins
-    if guild.id != config.guild:
+async def on_message(message):
+    if message.author == bot.user or message.author.bot:
         return
 
-    if guild.system_channel is not None:
-        welcome_message = f"Hi {member.mention}, welcome to the Happy Twosday Community! {random.choice(welcome_prompts)}"
-        await guild.system_channel.send(welcome_message)
+    await bot.process_commands(message)
 
 
 @bot.command(name="poll")
