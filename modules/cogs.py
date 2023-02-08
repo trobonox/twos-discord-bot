@@ -12,7 +12,7 @@ class cogs(commands.Cog):
     @commands.command(
         command="loadmodule", aliases=["lm", "load"], brief="Loads a module."
     )
-    @commands.has_permissions(manage_server=True)
+    @commands.has_permissions(manage_guild=True)
     async def loadmodule(self, ctx, module):
         module_exists = await aiofiles.os.path.isfile(f"./modules/{module}.py")
 
@@ -25,7 +25,7 @@ class cogs(commands.Cog):
     @commands.command(
         command="unloadmodule", aliases=["unload", "ulm"], brief="Unloads a module."
     )
-    @commands.has_permissions(manage_server=True)
+    @commands.has_permissions(manage_guild=True)
     async def unloadmodule(self, ctx, module):
         module_exists = await aiofiles.os.path.isfile(f"./modules/{module}.py")
 
@@ -38,7 +38,7 @@ class cogs(commands.Cog):
     @commands.command(
         command="reloadmodule", aliases=["reload", "rl"], brief="Reloads a module."
     )
-    @commands.has_permissions(manage_server=True)
+    @commands.has_permissions(manage_guild=True)
     async def reloadmodule(self, ctx, module):
         module_exists = await aiofiles.os.path.isfile(f"./modules/{module}.py")
 

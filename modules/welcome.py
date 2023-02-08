@@ -54,7 +54,7 @@ class welcome(commands.Cog):
     @commands.command(
         command="removeprompt", brief="Removes a prompt"
     )
-    @commands.has_permissions(manage_server=True)
+    @commands.has_permissions(manage_guild=True)
     async def removeprompt(self, ctx, prompt_number: int):
         with open("prompts.txt", "r+") as f:
             lines = f.readlines()
