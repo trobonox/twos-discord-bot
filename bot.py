@@ -10,7 +10,7 @@ from discord.ext import commands
 from help import CustomHelp
 
 # Bot version
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 # Load external JSON config
 config = config.config()
