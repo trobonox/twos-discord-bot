@@ -2,5 +2,10 @@
     "prefix": ".",
     "token": "INSERT TOKEN HERE",
     "status": "Insert some nice status here",
-    "guild": 1234
+    "guild": 1234,
+    "playlist_channel_id": 123456,
+    "spotify_client_id": "spotify_client_id_here",
+    "spotify_client_secret": "spotify_client_secret_here",
+    "spotify_redirect_url": "spotify_callback_url_here",
+    "spotify_playlist_url": "spotify_playlist_url_here"
 }

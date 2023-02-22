@@ -5,9 +5,8 @@ import discord
 import logging
 import traceback
 
-from utils import config
+from utils import config, db
 from discord.ext import commands
-from help import CustomHelp
 
 # Bot version
 __version__ = "1.2.0"
@@ -40,6 +39,8 @@ async def on_ready():
     logging.info(
         f"Bot v{__version__} started and logged in as {bot.user}. Running discord.py version {discord.__version__}."
     )
+
+    db.init_db()
 
     await bot.load_extension("help")
     await loadModules()
