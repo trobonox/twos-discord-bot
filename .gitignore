@@ -1,6 +1,8 @@
 # Bot specific config
 config.dev.json
 config.json
+.cache
+db/picks.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
