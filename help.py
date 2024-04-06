@@ -20,7 +20,7 @@ class CustomHelp(commands.MinimalHelpCommand):
             title="Help",
             timestamp=datetime.datetime.now(tz=pytz.timezone("Europe/Berlin"))
         )
-        embed.set_footer(text="Bot made by Trobonox (trobo.tech)")
+        embed.set_footer(text="Bot made by trobo (hello@trobo.dev)")
         embed.description = f"""
         Use `{config.prefix}help [command]` for more info on a command.\nYou can also use `{config.prefix}help [category]` for more info on a category.\n\n
         """
@@ -46,7 +46,7 @@ class CustomHelp(commands.MinimalHelpCommand):
             title=self.get_command_signature(command, extended=True),
             timestamp=datetime.datetime.now(tz=pytz.timezone("Europe/Berlin"))
         )
-        embed.set_footer(text="Bot made by Trobonox (trobo.tech)")
+        embed.set_footer(text="Bot made by trobo (hello@trobo.dev)")
         embed.add_field(name="Help", value=help_text)
         alias = command.aliases
         if alias:
@@ -60,7 +60,7 @@ class CustomHelp(commands.MinimalHelpCommand):
             title=f"Commands in {cog.qualified_name}",
             timestamp=datetime.datetime.now(tz=pytz.timezone("Europe/Berlin"))
         )
-        embed.set_footer(text="Bot made by Trobonox (trobo.tech)")
+        embed.set_footer(text="Bot made by trobo (hello@trobo.dev)")
 
         filtered_commands = await self.filter_commands(cog.get_commands(), sort=True)
 
