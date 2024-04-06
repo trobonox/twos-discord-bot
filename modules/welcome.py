@@ -24,7 +24,7 @@ class welcome(commands.Cog):
             return
 
         if guild.system_channel is not None:
-            welcome_message = f"Hi {member.mention}, welcome to the Happy Twosday Community! {random.choice(self.welcome_prompts)}"
+            welcome_message = f"Hi {member.name}, welcome to the Happy Twosday Community! {random.choice(self.welcome_prompts)}"
             await guild.system_channel.send(welcome_message)
 
     @commands.command(
